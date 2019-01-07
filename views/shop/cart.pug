@@ -1,0 +1,27 @@
+extends ../layout/main-layout.pug
+
+block styles
+    link(rel="stylesheet", href="/css/product.css")
+    link(rel="stylesheet", href="/css/form.css")
+    link(rel="stylesheet", href="/css/cart.css")
+
+block content
+        main
+            if products.length > 0
+                p.cart-value Total Cart Value $#{cartValue}
+                each product in products
+                    div.cart
+                        div.cart-prodImg
+                            img(src="" + product.productData.imageUrl,width="100px", height="100px" alt="" + product.productData.title)
+                        div.cart-title
+                            p #{product.productData.title} (#{product.qty})
+                            p $#{product.productData.price}
+                        div.cart-quantity
+                            p.cart-total Total
+                            p  $#{product.qty * product.productData.price}
+                        div.cart-delete-item
+                            form(action="/cart-delete-item", method="post")
+                                input(type="hidden", value=""+ product.productData.id, name="id")
+                                button.cart-delete-item-btn(type="submit") Delete
+            else
+                h1 No Products In Cart

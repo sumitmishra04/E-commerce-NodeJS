@@ -1,0 +1,35 @@
+.cart {
+    width: 50%;
+    height: 125px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    border: 1px solid #999;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    padding: 0 20px;
+}
+
+.cart-prodImg,
+.cart-delete-item {
+    display: flex;
+    align-items: center;
+}
+
+.cart-delete-item-btn {
+    border: 1px solid red;
+    color: red;
+
+}
+
+.cart-delete-item-btn:hover {
+    background: red;
+    color: white;
+}
+.cart-total{
+    font-weight: 600;
+}
+.cart-value{
+    font-weight: 600;
+    width: 50%;
+    text-align: center;
+}
